@@ -61,9 +61,11 @@
   overflow hidden;
   box-sizing border-box;
   background: rgba(33,33,33,0.1);
-  padding-bottom: 50px;
   .my_router,.my_left_nav{
     float :left;
   }
+    .my_left_nav{
+      display: inline-block;
+    }
 }
 </style>

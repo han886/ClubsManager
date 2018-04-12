@@ -10,6 +10,16 @@
   top: 5px;
   right: 12px;
 }
+.discussion .el-textarea{
+  width: 94%;
+}
+.edit_btn .el-button--text{
+  color: #d9a641
+}
+.discussion .edit_btn .el-button{
+  padding:0;
+  border:none;
+}
 .discussion .el-upload-list__item{
   width: 48%;
 }

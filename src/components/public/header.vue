@@ -23,19 +23,10 @@
         </el-autocomplete>
       </li>
       <li class="right">
-        <span class="right_word" @click="toRouter('/home')">首页</span>
         <span class="right_word" @click="toRouter('/manage')">管理</span>
-        <span class="right_word">登录</span>
+        <span class="right_word">注册</span>
+        <span class="right_word" @click="outLogin">退出</span>
         <img src="" alt="">
-        <el-dropdown trigger="click" @command="handleCommand">
-  <span class="el-dropdown-link">
-      <i class="iconfont icon-xiala"></i>
-  </span>
-          <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>退出</el-dropdown-item>
-            <el-dropdown-item>狮子头</el-dropdown-item>
-          </el-dropdown-menu>
-        </el-dropdown>
       </li>
     </ul>
   </div>
@@ -54,6 +45,18 @@
     methods: {
       goback(){
         window.history.go(-1);
+      },
+      outLogin() {
+        console.log('删除评论');
+        this.$confirm('是否退出?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          this.toRouter('/home')
+        }).catch(() => {
+
+        });
       },
       /*搜索下拉*/
       querySearch(queryString, cb) {
@@ -124,10 +127,6 @@
       },
       handleIconClick(ev) {
         console.log(ev);
-      },
-      /*下拉*/
-      handleCommand(){
-        console.log('点击了下拉菜单');
       },
       toRouter(myRouter){
         this.$router.push({path: myRouter})
@@ -218,11 +217,11 @@
       }
       .right_word {
         margin-right: 36px
-        cursor :pointer
+        cursor: pointer
       }
-        .right_word:hover{
-          color skyblue
-        }
+      .right_word:hover {
+        color skyblue
+      }
     }
   }
 </style>
