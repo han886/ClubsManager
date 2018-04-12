@@ -17,9 +17,10 @@
         isHoverClass:false,
         hoverIndex:-1,
         leftList: [
-          {className:'icon-icon',linkRouter:'/discussion',name:'论坛'},
+          {className:'icon-geren',linkRouter:'/mySpace',name:'个人中心'},
           {className:'icon-shangwuzhantubiaoku__jishutuandui',linkRouter:'/society',name:'社团管理'},
           {className:'icon-yuangongliebiao',linkRouter:'/member',name:'成员管理'}, {className:'icon-cailiaozhengli',linkRouter:'/materials',name:'物质管理'},{className:'icon-huodong',linkRouter:'/activity',name:'活动管理'},{className:'icon-shangwutubiao-',linkRouter:'/news',name:'新闻管理'},
+          {className:'icon-icon',linkRouter:'/discussion',name:'论坛'},
         ],
       }
     },
@@ -61,7 +62,7 @@
         text-align: center;
         box-sizing border-box
         width: 100%;
-        height: 98px;
+        height: 90px;
         padding: 6px 0
         cursor :pointer
         color: #fff

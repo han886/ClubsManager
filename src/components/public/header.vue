@@ -23,9 +23,9 @@
         </el-autocomplete>
       </li>
       <li class="right">
-        <span class="right_word" @click="toRouter('/manage')">管理</span>
-        <span class="right_word">注册</span>
-        <span class="right_word" @click="outLogin">退出</span>
+        <span class="right_word" @click="toRouter('/home')">登录</span>
+        <span class="right_word" @click="toRouter('/register')" >注册</span>
+        <span class="right_word" @click="outLogin" v-show="showOutLogin">退出</span>
         <img src="" alt="">
       </li>
     </ul>
@@ -38,7 +38,8 @@
     data() {
       return {
         restaurants: [],
-        state3: ''
+        state3: '',
+        showOutLogin:false,
       }
     },
     watch: {},
@@ -132,16 +133,20 @@
         this.$router.push({path: myRouter})
       },
     },
-
     mounted() {
       this.restaurants = this.loadAll();
+      if(this.$route.path=='/home'||this.$route.path=='/'){
+        this.showOutLogin=false;
+      }else {
+        this.showOutLogin=true;
+      }
     }
   }
 </script>
 <style scoped lang='stylus' rel='stylesheet/stylus'>
   .my_header {
     background-color: #fff
-    height: 50px
+    height: 16%;
     width: 100%
     overflow hidden;
     font-size: 14px;
@@ -170,7 +175,7 @@
     .el-input__suffix-inner .icon-wxbsousuotuiguang {
       font-size: 24px;
       position: absolute;
-      top: 8px;
+      top: 4px;
       left: -24px
     }
     .el-input__inner {
@@ -181,7 +186,7 @@
       line-height: 36px;
     }
     .heaer_ul {
-      padding: 0 12px 0 6px;
+      padding: 2px 12px 2px 6px;
       box-sizing border-box;
       display: flex;
       justify-content space-between;
