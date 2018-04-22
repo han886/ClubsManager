@@ -1,7 +1,7 @@
 <template>
   <div class="left_nav">
     <ul>
-      <li v-for="(item,index) in leftList" @click="toRouter(item.linkRouter)" @mouseout="test(index)" :class="{'hoverClass':hoverIndex==index}">
+      <li v-for="(item,index) in leftList" @click="toRouter(item.linkRouter),test(index)" :class="{'hoverClass':hoverIndex==index}" >
         <i class="iconfont" :class="item.className"></i>
         <p>{{item.name}}</p>
       </li>

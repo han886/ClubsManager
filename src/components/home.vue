@@ -43,7 +43,9 @@
       },
       login(){
         console.log(this.formLabelAlign);
-        this.$router.push({path: '/manage'})
+        localStorage.setItem("userRole", this.formLabelAlign.radio);
+        this.$router.push({path: '/manage'});
+        console.log(localStorage.getItem('userRole'));;
       }
     },
     mounted(){

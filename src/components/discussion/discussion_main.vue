@@ -39,7 +39,6 @@
         <div class="edit_btn">
           <i class="iconfont icon-dianzan orange" @click="isLike(index)" :class="{'orange_color':item.like}"></i>
           <i class="iconfont icon-pinglun orange"></i>
-          <i class="iconfont icon-zhuanfa orange"></i>
           <el-button type="text" @click="deletDis" v-show="item.isAccount"><i class="iconfont icon-shanchu orange"></i>
           </el-button>
         </div>
